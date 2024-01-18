@@ -32,6 +32,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Setup router
 app.use('/', require('./routes/home'));
 app.use('/blog', require('./routes/blog'));
+app.use('/blog/post', require('./routes/post'));
+app.use('/product', require('./routes/product'));
 
 // app.post();
 
