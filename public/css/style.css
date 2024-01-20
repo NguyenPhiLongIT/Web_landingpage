@@ -364,9 +364,10 @@ body {
 /*-------------PRODUCT-------------*/
 
 #type-products {
-    padding: 125px calc((100% - 1400px)/2) 0;
-    max-width: 1420px;
-    height: 140px;
+    box-sizing: border-box;
+    padding: 125px calc((100% - 1420px)/2) 0;
+    width: 1420px;
+    height: 250px;
     background-color: rgb(248, 248, 248);
 }
 
