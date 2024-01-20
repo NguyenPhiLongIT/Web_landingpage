@@ -151,14 +151,14 @@ body {
 /*-------------SLIDE-------------*/
 
 .container {
-    height: 850px;
+    height: 750px;
     position: relative;
     overflow: hidden;
 
 }
 
 .container .slide {
-    height: 700px;
+    height: 750px;
     position: absolute;
     display: flex;
     width: 100%;
@@ -168,12 +168,14 @@ body {
 .item {
     display: flex;
     /* height: 100%; */
-    min-width: 100%;
+    min-width: 100vw;
+    height: 100vh;
     /* object-fit: cover; */
     position: relative;
-    background-size: 100%;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
     /* animation: showslide 1s ease-in-out 2s; */
+    min-height: 100%;
 }
 
 .container--btn {
@@ -199,9 +201,9 @@ body {
     opacity: 0.6;
 }
 
-.container-dots {
+.container--dots {
     position: absolute;
-    bottom: 50px;
+    bottom: 40px;
     color: white;
     left: 0;
     width: 100%;
@@ -209,7 +211,7 @@ body {
     justify-content: center;
 }
 
-.dots li {
+.container--dots li {
     list-style: none;
     width: 10px;
     height: 10px;
@@ -219,22 +221,25 @@ body {
     transition: 1s;
 }
 
-.dots li.active {
+.container--dots li.active {
     width: 30px;
     background-color: darkgrey;
 }
 
-.dots li:hover {
+.container--dots li:hover {
     cursor: pointer;
 }
 
-.item:nth-child(1) .content {
-    min-width: 1450px;
+.item .content {
+    min-width: 1300px;
+    max-width: 1300px;
+    margin: 0 calc((100% - 1300px)/2);
+    position: relative;
 }
 
 .item:nth-child(1) .content .text {
     /* height: 120px; */
-    padding: 75px calc((100% - var(--content-text-width))/4) 40px;
+    padding: 75px calc((100% - var(--content-text-width))/4);
     box-sizing: border-box;
     width: 100%;
 }
@@ -242,22 +247,22 @@ body {
 .item:nth-child(1) .content .text p {
     font-size: 5.5rem;
     font-weight: 500;
-    min-width: 1400px;
     color: white;
 }
 
 .item:nth-child(1) .content .slide1-1 {
-    padding-left: 25%;
+    padding-left: calc((100% - 800px)/2);
+
     margin-bottom: 25px;
 }
 
 .item:nth-child(1) .content .slide1-2 {
-    padding-left: 25%;
+    padding-left: calc((100% - 800px)/2);
     margin-bottom: 35px;
 }
 
 .item:nth-child(1) .content .slide1-bottom {
-    padding-left: 28%;
+    padding-left: calc((100% - 800px)/2);
     margin-bottom: 25px;
     height: 105px;
 }
@@ -274,8 +279,7 @@ body {
 }
 
 .item:nth-child(2) .content .text {
-    padding: 175px 150px;
-    min-width: 1400px;
+    padding: 175px 0;
     float: left;
 }
 
@@ -293,16 +297,18 @@ body {
 
 .item:nth-child(2) .content .text p {
     font-size: 22px;
-    min-width: 1400px;
     color: cornflowerblue;
 }
 
 .item:nth-child(2) .content .slide2-1 {
     padding-top: 175px;
+    width: 700px;
+    position: absolute;
+    right: 0;
 }
 
 .item:nth-child(3) .content .text {
-    padding: 55px 165px;
+    padding: 55px calc((100% - var(--content-text-width))/2);
 }
 
 .item:nth-child(3) .content .text h3 {
@@ -312,16 +318,25 @@ body {
 }
 
 .item:nth-child(3) .content .text p {
-    padding-top: 580px;
     font-size: 22px;
     color: cornflowerblue;
-    min-width: 1400px;
+    min-width: 750px;
+    max-width: 750px;
     position: absolute;
+    bottom: 70px;
+    text-align: center;
+    margin: 0 calc((100% - 750px)/2);
+    left: 0;
 }
 
 .item:nth-child(3) .content .slide3-1 {
     top: 65px;
     position: absolute;
+    left: 0;
+}
+
+.item:nth-child(3) .content .slide3-1 img {
+    width: 100%;
 }
 
 .item:nth-child(4) .content .text {
@@ -343,14 +358,14 @@ body {
 }
 
 .item:nth-child(4) .content .slide4-1 {
-    padding-left: 120px;
+    padding-left: calc((100% - 1300px)/2);
     position: absolute;
 }
 
 /*-------------PRODUCT-------------*/
 
 #type-products {
-    padding: 125px calc((100% - 1400px)/2);
+    padding: 125px calc((100% - 1400px)/2) 0;
     max-width: 1420px;
     height: 140px;
     background-color: rgb(248, 248, 248);
@@ -373,9 +388,9 @@ body {
 
 #detail-types .buttons-product {
     margin-top: 280px;
-    left: 180px;
+    margin-left: calc((100% - 1000px)/2);
     position: absolute;
-    width: 76%;
+    width: 1000px;
     display: flex;
     justify-content: space-between;
 }
@@ -398,7 +413,8 @@ body {
     position: absolute;
     height: 100%;
     display: flex;
-    width: max-content;
+    min-width: 1em;
+    max-width: 100%;
     transition: 0.8s;
 }
 
@@ -406,6 +422,7 @@ body {
     height: 100%;
     object-fit: cover;
     position: relative;
+    min-width: 100%;
 }
 
 .type-product .name-product {
@@ -427,7 +444,8 @@ body {
 }
 
 .type-product .description-product {
-    padding: 20px 480px;
+    padding: 20px calc((100% - 800px)/2);
+    width: 800px;
 }
 
 .type-product .description-product p {
@@ -453,7 +471,8 @@ body {
 }
 
 .action_product {
-    margin-left: 625px;
+    margin: 0;
+    padding-left: calc((100% - 330px)/2);
     position: relative;
 }
 
@@ -477,9 +496,13 @@ body {
     text-align: center;
 }
 
-.sense-the-world_picture--first {
-    padding-left: calc((100% - (420px*3))/2);
+.sense--content {
+    margin: 0 calc((100% - 1300px)/2);
+    height: 500px;
+    width: 1300px;
+    position: relative;
 }
+
 
 .sense-the-world_picture {
     margin: 55px 8px;
@@ -518,14 +541,21 @@ body {
     letter-spacing: 1.2px;
 }
 
-#industrial-ready .industrial .left {
-    float: left;
-    padding-left: 160px;
+.industrial {
+    height: 500px;
+    width: 1400px;
+    margin: 0 calc((100% - 1400px)/2);
+    position: relative;
 }
 
-#industrial-ready .industrial .right {
-    float: right;
-    padding-right: 30px;
+.industrial .left {
+    position: absolute;
+    left: 0;
+}
+
+.industrial .right {
+    right: 0;
+    position: absolute;
 }
 
 #robotic {
@@ -611,15 +641,21 @@ body {
     text-align: center;
 }
 
+.customized--content {
+    margin: 0 calc((100% - 1300px)/2);
+    height: 500px;
+    width: 1300px;
+    position: relative;
+}
+
 .customized_left {
-    margin: 50px 190px;
+    left: 0;
     position: absolute;
 }
 
 .customized_right {
-    margin-top: 50px;
-    margin-right: 220px;
-    float: right;
+    right: 0;
+    position: absolute;
 }
 
 .customized_right h4 {
@@ -647,7 +683,14 @@ body {
     background-color: black;
 }
 
-#cases h3 {
+.cases--content {
+    margin: 0 calc((100% - 1500px)/2);
+    height: 500px;
+    width: 1500px;
+    position: relative;
+}
+
+.cases--content h3 {
     padding-top: 90px;
     font-size: 40px;
     font-weight: bold;
@@ -656,41 +699,37 @@ body {
     text-align: center;
 }
 
-#cases .video {
+.cases--content .video {
     float: left;
-    margin: 50px 50px;
+    margin: 50px 40px;
     width: 420px;
     height: 220px;
     background-color: #14345C;
 }
 
-#cases .video1 {
-    margin-left: calc((100% - (470px*3))/2);
-}
-
-#cases .box {
+.cases--content .box {
     margin-bottom: 220px;
 }
 
-#cases p {
+.cases--content p {
     margin-top: 20px;
     font-size: 18px;
     color: white;
 }
 
-#cases .load {
+.cases--content .load {
     margin: 390px auto;
     height: fit-content;
     width: fit-content;
 }
 
-#cases .load p {
+.cases--content .load p {
     font-size: 15px;
     letter-spacing: 0.8px;
     text-decoration: underline;
 }
 
-#cases .load p:hover {
+.cases--content .load p:hover {
     cursor: default;
     opacity: 0.4;
 }
@@ -772,6 +811,17 @@ body {
     background-color: white;
 }
 
+#alliance-partners .content {
+    margin: 0 calc((100% - 1400px)/2);
+    width: 1400px;
+    position: relative;
+    display: grid;
+    grid-template-areas:
+        'partner-1 partner-2'
+        'partner-3 partner-4'
+        'partner-5 partner-6';
+}
+
 #alliance-partners h3 {
     padding-top: 90px;
     font-size: 40px;
@@ -788,7 +838,7 @@ body {
 .partner-5,
 .partner-6 {
     float: left;
-    margin: 50px 235px;
+    margin: 50px calc((700px - 320px)/2);
     height: 170px;
     width: 320px;
     background-color: #14345C;
