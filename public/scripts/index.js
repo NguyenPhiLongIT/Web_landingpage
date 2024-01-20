@@ -24,11 +24,16 @@ prev.onclick = function () {
 let refreshSlider = setInterval(() => { next.click() }, 10000);
 function reloadSlider() {
     let checkLeft = items[active].offsetLeft;
-    slide.style.left = -checkLeft + 'px';
+
+    // Calculate the percentage of the current slide's position relative to the container width
+    let positionPercentage = (checkLeft / slide.clientWidth) * 100;
+
+    slide.style.transform = `translateX(-${positionPercentage}%)`;
 
     let lastActiveDot = document.querySelector('.container .container--dots li.active');
     lastActiveDot.classList.remove('active');
     dots[active].classList.add('active');
+
     clearInterval(refreshSlider);
     refreshSlider = setInterval(() => { next.click() }, 10000);
 }

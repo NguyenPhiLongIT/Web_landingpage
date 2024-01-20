@@ -4,6 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
+    "install": "npm install express ejs body-parser mongoose mongodb nodemon body-parser",
     "start": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
