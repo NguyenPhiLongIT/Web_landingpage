@@ -1,0 +1,20 @@
+<%- include('blog_navbar') %>
+
+<div class="post-detail">
+	<div class="datetime-reading-detail">
+		<a href="#"><img class="logo" src="https://lh3.googleusercontent.com/a-/AOh14GgV8AVRY0eTlgf2Qs2B61cI10cwEMhMlCGbEgocQw=s96-c" height="30px">LIPS</a>
+		<span class="date"><%= post.time_upload %></span>
+		<!-- time_upload_time -->
+		<span class="reading">2 min read</span>
+		<button id="share"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+	</div>
+	<div class="content">
+		<h3 class="title"><%= post.title %></h3>
+		<span class="updated"><%= post.time_update %></span>
+		<div class="post-content">
+			<% post.content.forEach(element => { %>
+			<%- element %>
+			<% }) %>
+		</div>
+	</div>
+</div>

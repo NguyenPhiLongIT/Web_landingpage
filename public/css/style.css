@@ -895,6 +895,11 @@ body {
     margin-left: 11px;
 }
 
+#footer .col_last p {
+    font-size: 17px;
+    color: #14345C;
+}
+
 .copyright {
     height: 25px;
     /* background-color: white; */
@@ -974,7 +979,7 @@ body {
 }
 
 #share {
-    margin-left: 22rem;
+    margin-left: 20rem;
     background-color: white;
     color: #284f7e;
     border: none;
@@ -1081,10 +1086,10 @@ body {
 
 /*=======================BLOG/POST-PAGE========================*/
 .post-detail {
-    margin: 2rem 30rem;
     border: 1px solid #284f7e;
     width: 98rem;
     height: 120rem;
+    margin: 2rem calc((100% - 98rem)/2);
 }
 
 .datetime-reading-detail {

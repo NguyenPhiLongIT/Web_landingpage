@@ -1,34 +1,13 @@
 <%- include('../elements/header') %>
+
 <body>
-    <%- include('../elements/navbar.ejs') %>
-    <div class="wrapper">
-        <ul>
-        <li><a href="#">All Posts</a></li>
-        <li><a href="#">Successful Case</a></li>
-        <li><a href="#">News</a></li>
-        <li><a href="#">Product</a></li>
-        <li><a href="#">Partner</a></li>
-        <li><a href="#">Developer</a></li>
-        <li><a class="btn-link" href="#"><img src="/image/search.png" alt="search"></a></li>
-        </ul>
-    </div>
-    <div class="post-detail">
-        <div class="datetime-reading-detail">
-            <a href="#"><img class="logo" src="https://lh3.googleusercontent.com/a-/AOh14GgV8AVRY0eTlgf2Qs2B61cI10cwEMhMlCGbEgocQw=s96-c" height="30px">&nbsp;&nbsp;LIPS</a>
-            <span class="date">Dec 21, 2023</span>
-            <span class="reading">2 min read</span>
-            <button id="share"><i class="fa-solid fa-ellipsis-vertical"></i></button>
-        </div>
-        <div class="content">
-            <h3 class="title">LIPSedge™ SDK Persistent Connection For PoE and USB</h3>
-            <span class="updated">Updated: Dec 22, 2023</span>
-            <p>The LIPSedge™ SDK Persistent Connection available for LIPSedge™ 3D cameras, is made specifically
-                for solving interface disconnections both from Power-over-Ethernet and USB interfaces in various applications.
-            </p>
-            <img src="https://static.wixstatic.com/media/480a0e_64974707e47f42ccb2cc5e2c072adcbe~mv2.png/v1/fill/w_360,h_204,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/480a0e_64974707e47f42ccb2cc5e2c072adcbe~mv2.png">
-            <img src="https://static.wixstatic.com/media/480a0e_4fe35ec99f254804896ea21589d7d9fd~mv2.png/v1/fill/w_340,h_192,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/480a0e_4fe35ec99f254804896ea21589d7d9fd~mv2.png">
-            <p>test</p>
-        </div>
-    </div>
+	<%- include('../elements/navbar') %>
+	
+	<!--CONTENT-START-->
+	<div id="blog-body">
+		<%- include('../elements/post.ejs') %>
+	</div>
+	<%- include('../elements/footer') %>
 </body>
+
 </html>

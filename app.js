@@ -4,23 +4,24 @@ const path = require('path');
 // const ejs = require('ejs');
 const mongoose = require('mongoose');
 
+const postController = require('./controller/post');
+
 const app = express();
-const port = 1009;
+const port = 3000;
 
-// mongoose
-//     .connect('mongodb+srv://nguyenphilongit123:Long10092003@cluster0.pbxpwii.mongodb.net/LIPS')
-//     .then(() => {
-//         app.listen("Connected");
-//     })
-//     .catch((err) => {
-//         console.log("ERROR");
-//     });
+mongoose
+	.connect("mongodb+srv://nopassword:nopassword@cluster0.pbxpwii.mongodb.net/blog")
+	.then(() => {
+		app.listen(port);
+	})
+	.catch((err) => {
+		console.log(err);
+	});
 
-main().catch(err => console.log(err));
+app.get('/test/:postID', postController.getPostByID, async (req, res, next) => {
+	const post = req.post;
 
-async function main() {
-	await mongoose.connect('mongodb+srv://nguyenphilongit123:Long10092003@cluster0.pbxpwii.mongodb.net/LIPS');
-}
+});
 
 app.set("views", path.join(__dirname, 'views'));
 app.set("view engine", 'ejs');
@@ -32,11 +33,4 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Setup router
 app.use('/', require('./routes/home'));
 app.use('/blog', require('./routes/blog'));
-app.use('/blog/post', require('./routes/post'));
 app.use('/product', require('./routes/product'));
-
-// app.post();
-
-app.listen(port, () => {
-	console.log(`Listening on port ${port}`);
-});
