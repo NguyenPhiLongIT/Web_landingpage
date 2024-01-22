@@ -19,3 +19,4 @@ exports.updatePost = async (id, post) => {
 exports.deletePost = async (id) => {
     return await PostModel.delete(id);
 };
+

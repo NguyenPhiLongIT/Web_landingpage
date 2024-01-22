@@ -6,6 +6,12 @@ const postSchema = new Schema({
     "time_update": { type: String },
     "title": { type: String },
     "content": { type: Array },
+    "format": [
+        {
+            "open_tag": { type: String },
+            "close_tag": { type: String },
+        }
+    ],
     "views": { type: Number },
     "like": { type: Number },
     "comment": [
