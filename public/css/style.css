@@ -1088,7 +1088,7 @@ body {
 .post-detail {
     border: 1px solid #284f7e;
     width: 98rem;
-    height: 120rem;
+    /* height: 120rem; */
     margin: 2rem calc((100% - 98rem)/2);
 }
 
@@ -1124,6 +1124,75 @@ body {
     margin-bottom: 2rem;
 }
 
+.post-content .line-top{
+    margin-top: 6rem;
+}
+.post-content .line-top, .line-bottom{
+    list-style: none;
+    border: 1px solid gainsboro;
+}
+.post-content button{
+    margin: 2rem 1.3rem;
+    background-color:white;
+    color: #14345C;
+    border: none;
+}
+.post-content button:hover{
+    cursor: pointer;
+    color:#3468a7;
+}
+.interact-post{
+    margin-top: 2rem;
+}
+.interact-post span {
+    font-size: 1.8rem;
+    margin-right: 2rem;
+    color:#455870;
+}
+.interact-post #love{
+    margin-left: 55rem;
+}
+
+.recent-posts{
+    margin: 4rem 28rem;
+    position: relative;
+}
+.recent-posts h4{
+    float: left;
+    margin-right: 80rem;
+    font-size: 1.8rem;
+    color:#455870;
+}
+.recent-posts span{
+    font-size: 1.7rem;
+    color:#455870;
+}
+.recent-post-box{
+    display: flex;
+    /* justify-content:space-around; */
+}
+
+.comments-wrapper{
+    border: 1px solid #284f7e;
+    width: 98rem;
+    margin: 2rem calc((100% - 98rem)/2);
+}
+.comments-content{
+    margin: 2rem 7rem;
+}
+.comments-content span{
+    font-size: 1.8rem;
+    color:#455870;
+}
+.comments-content .line{
+    margin-top: 2rem;
+    list-style: none;
+    border: 1px solid gainsboro;
+}
+#write-comment{
+    margin-top: 4rem;
+    padding-bottom: 2rem;
+}
 
 /*=======================PRODUCT-PAGE========================*/
 .wrapper-product {

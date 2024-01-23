@@ -242,3 +242,14 @@
     width: 280px;
     padding-left: 10px;
 }
+/*--------------INPUT - WRITE-COMMENT--------------*/
+#write-comment .row input{
+    display: inline-block;
+    height: 6rem;
+    line-height: 6rem;
+    border: 1px solid #a1b4da;
+    font-size: 1.8rem;
+    color: #455870;
+    width: 100%;
+    padding-left: 10px;
+}
