@@ -3,22 +3,21 @@ const router = express.Router();
 const postController = require('../controller/post');
 const postFormat = require('../services/post_format');
 
-router.get('/', postController.getAllPosts, (req, res) => {
+router.get('/', postController.getAllPosts, (req, res, next) => {
 
     const summaryPosts = req.posts.map(post => {
         return postFormat.clearTags(post.content[0]).slice(0, 200) + '...';
     });
-    console.log("🚀 ~ router.get ~ sumaryPosts", summaryPosts)
+    res.req.posts = req.posts;
     res.render('pages/blog', { posts: req.posts, summaryPosts: summaryPosts });
+    next();
 });
 
-router.get('/:postID', postController.getPostByID, (req, res, next) => {
+router.get('/:postID', postController.getPostByID, postController.getAllPosts, (req, res, next) => {
     const post = req.post;
-    // const content = req.post.content;
+    const posts = req.posts;
     const content = postFormat.formatPostContent(post);
-    // console.log("🚀 ~ router.get ~ content:", content)
-    res.render('pages/post', { post, 'content': content });
-    next();
+    res.render('pages/post', { post, 'content': content, 'posts': posts });
 });
 
 module.exports = router;
