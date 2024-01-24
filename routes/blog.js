@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const postController = require('../controller/post');
 const postFormat = require('../services/post_format');
+const convertToSlug = require('../services/url_helper').convertToSlug;
 
 router.get('/', postController.getAllPosts, (req, res, next) => {
 
@@ -13,11 +14,12 @@ router.get('/', postController.getAllPosts, (req, res, next) => {
     next();
 });
 
-router.get('/:postID', postController.getPostByID, postController.getAllPosts, (req, res, next) => {
+router.get('/:slug', postController.getPostBySlug, postController.getAllPosts, (req, res, next) => {
     const post = req.post;
     const posts = req.posts;
     const content = postFormat.formatPostContent(post);
     res.render('pages/post', { post, 'content': content, 'posts': posts });
+    next();
 });
 
 module.exports = router;

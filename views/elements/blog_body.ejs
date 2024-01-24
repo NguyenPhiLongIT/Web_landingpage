@@ -4,7 +4,7 @@
 		<% for(let i = 0; i < posts.length; i++) { %>
 		<% let e = posts[i]; %>
 		<div class="content">
-			<a href="/blog/0"><img class="img-post" src=<%= e.picture %> alt="post1"></a>
+			<a href="/blog/<%= e.slug %>"><img class="img-post" src=<%= e.picture %> alt="post1"></a>
 			<div class="info">
 				<div class="datetime-reading">
 					<a href="#"><img class="logo" src="https://lh3.googleusercontent.com/a-/AOh14GgV8AVRY0eTlgf2Qs2B61cI10cwEMhMlCGbEgocQw=s96-c" height="30px">&nbsp;&nbsp;LIPS</a>
@@ -12,10 +12,10 @@
 					<span class="reading">2 min</span>
 					<button id="share"><i class="fa-solid fa-ellipsis-vertical"></i></button>
 				</div>
-				<a href="/blog/0">
+				<a href="/blog/<%= e.slug %>">
 					<h4><%= e.title %></h4>
 				</a>
-				<a href="/blog/0">
+				<a href="/blog/<%= e.slug %>">
 					<%- summaryPosts[0] %>
 				</a>
 				<li class="border"></li>

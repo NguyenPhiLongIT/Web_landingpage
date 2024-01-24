@@ -35,6 +35,26 @@ exports.getPostByID = async (req, res, next) => {
     }
 };
 
+exports.getPostByTitle = async (req, res, next) => {
+    try {
+        const post = await postService.getPostByTitle(req.params.postTitle);
+        req.post = post;
+        next();
+    } catch (err) {
+        res.status(500).send({ error: err.message });
+    }
+}
+
+exports.getPostBySlug = async (req, res, next) => {
+    try {
+        const post = await postService.getPostBySlug(req.params.slug);
+        req.post = post;
+        next();
+    } catch (err) {
+        res.status(500).send({ error: err.message });
+    }
+}
+
 exports.updatePost = async (req, res, next) => {
     try {
         const post = await postService.updatePost(req.params.id, req.body);

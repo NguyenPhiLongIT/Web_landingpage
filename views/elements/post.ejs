@@ -36,7 +36,7 @@
 	<div class="recent-post-box">
 		<% for(let i = 0; i < posts.length; i++) { %>
 		<% let e = posts[i]; %>
-		<a href="/blog/<%= e._id %>"><img class="img-post" src="<%= e.picture %>" height="150px" alt="post1"></a>
+		<a href="/blog/<%= e.slug %>"><img class="img-post" src="<%= e.picture %>" height="150px" alt="post1"></a>
 		<h4><%= e.title %></h4>
 		<li class="line"></li>
 		<button id="eye"><i class="fa-regular fa-eye fa-lg"></i></button>

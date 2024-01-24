@@ -22,6 +22,7 @@ const postSchema = new Schema({
     ],
     "is_deleted": { type: Boolean, default: false },
     "picture": { type: String },
+    "slug": { type: String },
 });
 
-module.exports = mongoose.model("metric", postSchema, "postsTest");
+module.exports = mongoose.model("posts", postSchema, "postsTest");

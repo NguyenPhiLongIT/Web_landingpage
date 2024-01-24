@@ -38,7 +38,6 @@ function getFormat(dict, key) {
 function insideFormat(content) {
     // Match all format options in the content
     const formatOptions = content.match(/#\((.+?)\)(.+?)\/#/g);
-    console.log("🚀 ~ insideFormat ~ formatOptions:", formatOptions)
     if (!formatOptions) return content; //notag -> return
 
     // Loop over all format options
@@ -52,11 +51,12 @@ function insideFormat(content) {
         const options = option.split(' ');
 
         const openTags = options.map(option => {
-            if (getFormat(formatDictionary, option)?.open) { //Check in dict
-                if (typeof getFormat(formatDictionary, option).open == 'function') {
-                    return getFormat(formatDictionary, option).open(option);
+            const formatInfo = getFormat(formatDictionary, option);
+            if (formatInfo && formatInfo.open) { // Check in dict
+                if (typeof formatInfo.open === 'function') {
+                    return formatInfo.open(option);
                 } else {
-                    return getFormat(formatDictionary, option).open;
+                    return formatInfo.open;
                 }
             } else {
                 return '';
@@ -64,9 +64,8 @@ function insideFormat(content) {
         });
 
         const closeTags = options.map(option => {
-
-            return getFormat(formatDictionary, option)?.close || '';
-
+            const formatInfo = getFormat(formatDictionary, option);
+            return formatInfo && formatInfo.close || '';
         });
 
         const formattedContent = openTags.join('') + contentToFormat + closeTags.reverse().join('');
