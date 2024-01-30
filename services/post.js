@@ -1,11 +1,24 @@
 const PostModel = require("../models/blog/post");
+const convertToSlug = require("../services/url_helper").convertToSlug;
+const today = require("../services/date").formatDateNow();
 
 exports.getAllPost = async () => {
     return await PostModel.find();
 };
 
 exports.createPost = async (post) => {
-    return await PostModel.create(post);
+    const newPost = new PostModel(post);
+    newPost.slug = convertToSlug(newPost.title);
+    newPost.time_upload = today;
+    newPost.time_update = today;
+    newPost.format = [
+        {
+            "open_tag": "<p>",
+            "close_tag": "</p>",
+        }
+    ];
+    await newPost.save();
+    return newPost;
 };
 
 exports.getPostByID = async (id) => {

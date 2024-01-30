@@ -39,7 +39,7 @@ body {
 }
 
 .posts {
-    height: 1980px;
+    /* height: 1980px; */
     position: relative;
 }
 
@@ -217,111 +217,132 @@ body {
     margin-bottom: 2rem;
 }
 
-.post-content .line-top{
+.post-content .line-top {
     margin-top: 6rem;
 }
-.post-content .line-top, .line-bottom{
+
+.post-content .line-top,
+.line-bottom {
     list-style: none;
     border: 1px solid gainsboro;
 }
-.post-content button{
+
+.post-content button {
     margin: 2rem 1.3rem;
-    background-color:white;
+    background-color: white;
     color: #14345C;
     border: none;
 }
-.post-content button:hover{
+
+.post-content button:hover {
     cursor: pointer;
-    color:#3468a7;
+    color: #3468a7;
 }
-.interact-post{
+
+.interact-post {
     margin-top: 2rem;
 }
+
 .interact-post span {
     font-size: 1.8rem;
     margin-right: 2rem;
-    color:#455870;
+    color: #455870;
 }
-.interact-post #love{
+
+.interact-post #love {
     margin-left: 55rem;
 }
 
-.recent-posts{
+.recent-posts {
     margin: 4rem 28rem;
     position: relative;
 }
-.recent-posts h4{
+
+.recent-posts h4 {
     float: left;
     margin-right: 80rem;
     font-size: 1.8rem;
-    color:#455870;
+    color: #455870;
 }
-.recent-posts span{
+
+.recent-posts span {
     font-size: 1.7rem;
-    color:#455870;
+    color: #455870;
 }
-.recent-post-wrapper{
+
+.recent-post-wrapper {
     display: flex;
     justify-content: space-between;
 }
-.recent-post-box{
+
+.recent-post-box {
     margin-top: 2.4rem;
     border: 1px solid #284f7e;
     height: 30.13rem;
     width: 30rem;
 }
-.post-img-wrapper{
+
+.post-img-wrapper {
     width: 30rem;
     height: 16.1rem;
     background-color: #14345C;
 }
-.post-img-wrapper img{
+
+.post-img-wrapper img {
     width: 30rem;
 }
-.post-img-wrapper h4{
+
+.post-img-wrapper h4 {
     margin: 2.8rem 2.5rem;
     font-size: 1.8rem;
     font-weight: normal;
     text-overflow: ellipsis;
-    overflow: hidden; 
-    width: 25rem; 
-    height: 3.8rem; 
+    overflow: hidden;
+    width: 25rem;
+    height: 3.8rem;
     white-space: nowrap;
 }
-.post-img-wrapper .line{
+
+.post-img-wrapper .line {
     margin: 8rem 2.5rem;
     list-style: none;
     border: 1px solid gainsboro;
 }
-.recent-post-box button{
+
+.recent-post-box button {
     margin-left: 2.5rem;
     background-color: white;
     color: #14345C;
     border: none;
 }
-.recent-post-box #comment:hover{
+
+.recent-post-box #comment:hover {
     cursor: pointer;
-    color:#3468a7;
+    color: #3468a7;
 }
 
-.comments-wrapper{
+.comments-wrapper {
     border: 1px solid #284f7e;
     width: 98rem;
     margin: 2rem calc((100% - 98rem)/2);
 }
-.comments-content{
+
+.comments-content {
     margin: 2rem 7rem;
 }
-.comments-content span{
+
+.comments-content span {
     font-size: 1.8rem;
-    color:#455870;
+    color: #455870;
 }
-.comments-content .line{
+
+.comments-content .line {
     margin-top: 2rem;
     list-style: none;
     border: 1px solid gainsboro;
 }
-#write-comment{
+
+#write-comment {
     margin-top: 4rem;
     padding-bottom: 2rem;
 }

@@ -10,7 +10,7 @@ const app = express();
 const port = 3000;
 
 mongoose
-	.connect("mongodb+srv://nopassword:nopassword@cluster0.pbxpwii.mongodb.net/blog")
+	.connect("mongodb+srv://nguyenphilongit123:Long10092003@cluster0.pbxpwii.mongodb.net/blog")
 	.then(() => {
 		app.listen(port);
 	})

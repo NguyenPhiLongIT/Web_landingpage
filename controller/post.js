@@ -13,11 +13,9 @@ exports.getAllPosts = async (req, res, next) => {
 
 exports.createPost = async (req, res, next) => {
     try {
+        // console.log("🚀 ~ exports.createPost= ~ req.body:", req.body)
         const post = await postService.createPost(req.body);
-        res.json({ data: post, status: "success" }); // use res.json to send an object
-        // res.render({
-        //     time_upload_time: post.time_upload_time,
-        // });
+        res.redirect('/blog/create_success');
     } catch (err) {
         res.status(500).send({ error: err.message });
     }

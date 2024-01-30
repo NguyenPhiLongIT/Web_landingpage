@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const postSchema = new Schema({
-    "_id": { type: Number },
     "time_upload": { type: String },
     "time_update": { type: String },
     "title": { type: String },
