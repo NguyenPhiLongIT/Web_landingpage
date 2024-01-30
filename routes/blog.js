@@ -1,19 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const postController = require('../controller/post');
-const postFormat = require('../services/post_format');
-const convertToSlug = require('../services/url_helper').convertToSlug;
+const postFormat = require('../util/post_format');
 
-router.get('/', postController.getAllPosts, (req, res, next) => {
-
-    const summaryPosts = req.posts.map(post => {
-        return post.content.map(content => {
-            return postFormat.clearTags(content).slice(0, 200) + '...';
-        })[0];
-    });
-    res.req.posts = req.posts;
-    res.render('pages/blog', { posts: req.posts, summaryPosts: summaryPosts });
-});
+router.get('/', postController.getAllPosts);
 
 router.get('/create', (req, res, next) => {
     res.render('pages/create_post');
