@@ -32,3 +32,4 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/', require('./routes/home'));
 app.use('/blog', require('./routes/blog'));
 app.use('/product', require('./routes/product'));
+app.use('/wordpress', require('./routes/wordpress'));
