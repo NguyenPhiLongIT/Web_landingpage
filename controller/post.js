@@ -3,9 +3,10 @@ const postService = require("../services/post");
 exports.getAllPosts = async (req, res, next) => {
     try {
         const posts = await postService.getAllPost();
-        req.posts = posts; //-> set posts to req, cant use res.json
-        // console.log(req);
-        next();
+        // res.setHeader('Content-Type', 'text/html');
+        // res.send({ posts: posts, status: "success" })
+        res.render("pages/blog", { posts: posts })
+        // next();
     } catch (err) {
         res.status(500).send({ error: err.message });
     }

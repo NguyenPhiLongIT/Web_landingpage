@@ -1,9 +1,10 @@
 const PostModel = require("../models/blog/post");
-const convertToSlug = require("../services/url_helper").convertToSlug;
-const today = require("../services/date").formatDateNow();
+const convertToSlug = require("../util/url_helper").convertToSlug;
+const today = require("../util/date").formatDateNow();
 
 exports.getAllPost = async () => {
-    return await PostModel.find();
+    const posts = await PostModel.find();
+    return posts;
 };
 
 exports.createPost = async (post) => {
