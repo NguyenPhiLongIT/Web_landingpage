@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 
 const postController = require('./controller/post');
 
+
 const app = express();
 const port = 3000;
 
@@ -34,3 +35,4 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', require('./routes/home'));
 app.use('/blog', require('./routes/blog'));
 app.use('/product', require('./routes/product'));
+// app.use('/admin', require('./routes/admin'));
