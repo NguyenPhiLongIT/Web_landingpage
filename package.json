@@ -5,6 +5,7 @@
   "main": "app.js",
   "scripts": {
     "install": "npm install express ejs body-parser mongoose mongodb nodemon body-parser",
+    "build_ckeditor": "cd ckeditor5 && npm install && npm run build",
     "start": "nodemon --inspect app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -12,13 +13,29 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@ckeditor/ckeditor5-alignment": "^41.1.0",
+    "@ckeditor/ckeditor5-build-classic": "^41.1.0",
+    "@ckeditor/ckeditor5-highlight": "^41.1.0",
+    "@ckeditor/ckeditor5-image": "^41.1.0",
+    "@ckeditor/ckeditor5-remove-format": "^41.1.0",
+    "@ckeditor/ckeditor5-upload": "^41.1.0",
+    "@editorjs/editorjs": "^2.29.0",
+    "aes-js": "^3.1.2",
     "axios": "^1.6.7",
     "body-parser": "^1.20.2",
+    "ckeditor5": "^41.1.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
     "ejs": "^3.1.9",
     "express": "^4.18.2",
+    "express-fileupload": "^1.4.3",
+    "file": "^0.2.2",
+    "googleapis": "^133.0.0",
+    "http-proxy-middleware": "^2.0.6",
     "mongodb": "^6.3.0",
-    "mongoose": "^8.1.0",
-    "nodemon": "^3.0.3"
+    "mongoose": "^8.2.0",
+    "multer": "^1.4.5-lts.1",
+    "nodemon": "^3.1.0"
   },
   "devDependencies": {
     "wordpress": "^1.4.2"

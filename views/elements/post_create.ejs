@@ -2,9 +2,27 @@
 	<form action="/blog/store" method="post" id="write-comment">
 		<div class="row">
 			<input type="text" name="title" placeholder="Title">
-			<input type="text" name="content" placeholder="Content">
+			<textarea id="editor" type="text" name="content" placeholder="Content"></textarea>
 			<input type="text" name="picture" placeholder="Picture link">
 			<button type="submit">OK</button>
 		</div>
 	</form>
 </div>
+
+<script src="/ckeditor.js"></script>
+<script>
+	ClassicEditor
+		.create(document.querySelector('#editor'), {
+			simpleUpload: {
+				// The URL that the images are uploaded to.
+				uploadUrl: 'upload/image',
+				fieldName: 'image',
+			}
+		})
+		.then(editor => {
+			window.editor = editor;
+		})
+		.catch(err => {
+			console.error(err.stack);
+		});
+</script>
