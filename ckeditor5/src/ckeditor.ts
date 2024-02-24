@@ -6,20 +6,18 @@
 import { ClassicEditor } from '@ckeditor/ckeditor5-editor-classic';
 
 import { Alignment } from '@ckeditor/ckeditor5-alignment';
-import { Autosave } from '@ckeditor/ckeditor5-autosave';
 import { Bold, Italic, Subscript, Superscript, Underline } from '@ckeditor/ckeditor5-basic-styles';
-import { BlockQuote } from '@ckeditor/ckeditor5-block-quote';
 import { CodeBlock } from '@ckeditor/ckeditor5-code-block';
 import type { EditorConfig } from '@ckeditor/ckeditor5-core';
 import { Essentials } from '@ckeditor/ckeditor5-essentials';
-import { FindAndReplace } from '@ckeditor/ckeditor5-find-and-replace';
-import { FontBackgroundColor, FontColor, FontSize } from '@ckeditor/ckeditor5-font';
+import { FontBackgroundColor, FontColor, FontFamily, FontSize } from '@ckeditor/ckeditor5-font';
 import { Heading } from '@ckeditor/ckeditor5-heading';
 import { Highlight } from '@ckeditor/ckeditor5-highlight';
 import { HorizontalLine } from '@ckeditor/ckeditor5-horizontal-line';
 import { GeneralHtmlSupport } from '@ckeditor/ckeditor5-html-support';
 import {
 	Image,
+	ImageCaption,
 	ImageInsert,
 	ImageResize,
 	ImageStyle,
@@ -29,12 +27,11 @@ import {
 import { Indent, IndentBlock } from '@ckeditor/ckeditor5-indent';
 import { Link, LinkImage } from '@ckeditor/ckeditor5-link';
 import { List, ListProperties } from '@ckeditor/ckeditor5-list';
-import { Markdown } from '@ckeditor/ckeditor5-markdown-gfm';
 import { MediaEmbed, MediaEmbedToolbar } from '@ckeditor/ckeditor5-media-embed';
 import { Paragraph } from '@ckeditor/ckeditor5-paragraph';
 import { PasteFromOffice } from '@ckeditor/ckeditor5-paste-from-office';
-import { SelectAll } from '@ckeditor/ckeditor5-select-all';
 import { ShowBlocks } from '@ckeditor/ckeditor5-show-blocks';
+import { SourceEditing } from '@ckeditor/ckeditor5-source-editing';
 import {
 	SpecialCharacters,
 	SpecialCharactersArrows,
@@ -64,20 +61,19 @@ import { WordCount } from '@ckeditor/ckeditor5-word-count';
 class Editor extends ClassicEditor {
 	public static override builtinPlugins = [
 		Alignment,
-		Autosave,
-		BlockQuote,
 		Bold,
 		CodeBlock,
 		Essentials,
-		FindAndReplace,
 		FontBackgroundColor,
 		FontColor,
+		FontFamily,
 		FontSize,
 		GeneralHtmlSupport,
 		Heading,
 		Highlight,
 		HorizontalLine,
 		Image,
+		ImageCaption,
 		ImageInsert,
 		ImageResize,
 		ImageStyle,
@@ -90,14 +86,13 @@ class Editor extends ClassicEditor {
 		LinkImage,
 		List,
 		ListProperties,
-		Markdown,
 		MediaEmbed,
 		MediaEmbedToolbar,
 		Paragraph,
 		PasteFromOffice,
-		SelectAll,
 		ShowBlocks,
 		SimpleUploadAdapter,
+		SourceEditing,
 		SpecialCharacters,
 		SpecialCharactersArrows,
 		SpecialCharactersCurrency,
@@ -124,44 +119,42 @@ class Editor extends ClassicEditor {
 		toolbar: {
 			items: [
 				'heading',
+				'style',
 				'|',
 				'bold',
 				'italic',
 				'underline',
+				'bulletedList',
+				'numberedList',
 				'|',
 				'outdent',
 				'indent',
-				'numberedList',
-				'bulletedList',
 				'alignment',
 				'|',
-				'link',
 				'imageUpload',
 				'imageInsert',
+				'link',
+				'insertTable',
 				'mediaEmbed',
 				'|',
-				'blockQuote',
-				'insertTable',
-				'horizontalLine',
 				'codeBlock',
 				'-',
-				'style',
+				'undo',
+				'redo',
 				'|',
+				'fontFamily',
 				'fontSize',
 				'fontColor',
 				'fontBackgroundColor',
 				'highlight',
 				'|',
-				'undo',
-				'redo',
-				'|',
-				'findAndReplace',
-				'selectAll',
+				'horizontalLine',
 				'showBlocks',
+				'sourceEditing',
+				'specialCharacters',
 				'|',
-				'subscript',
 				'superscript',
-				'specialCharacters'
+				'subscript'
 			],
 			shouldNotGroupWhenFull: true
 		},
@@ -169,6 +162,7 @@ class Editor extends ClassicEditor {
 		image: {
 			toolbar: [
 				'imageTextAlternative',
+				'toggleImageCaption',
 				'imageStyle:inline',
 				'imageStyle:block',
 				'imageStyle:side',
