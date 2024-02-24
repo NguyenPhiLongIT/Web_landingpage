@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const postController = require('../controller/post');
-const postFormat = require('../services/post_format');
-const convertToSlug = require('../services/url_helper').convertToSlug;
+const postFormat = require('../util/post_format');
+const convertToSlug = require('../util/url_helper').convertToSlug;
 
 router.get('/', postController.getAllPosts, (req, res, next) => {
 
