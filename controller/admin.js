@@ -3,7 +3,7 @@ const bcrypt = require('bcrypt');
 
 const loadLogin = async(req, res)=>{
     try{
-        res.render('/pages/login')
+        res.render('admin/pages/login');
     } catch(error){
         console.log(error.message);
     }
@@ -12,23 +12,28 @@ const loadLogin = async(req, res)=>{
 const verifyLogin = async(req, res)=>{
     try{
         const email = req.body.email;
-        const password = req.body.password;
-        const adminData = await Admin.find({email:email});
+        const password = req.body.pass;
+        const adminData = await Admin.findOne({email:email});
 
         if(adminData){
-            const passwordMatch = await bcrypt.compare(password, adminData.password);
-            
+            console.log("entry Check");
+            // const passwordMatch = (password == adminData.password);  
+            const hash = await bcrypt.hash(adminData.password, 10);
+            const passwordMatch = await bcrypt.compare(password, hash);
             if(passwordMatch) {
-                if(adminData.is_admin == 1){
-                    res.redirect('/pages/dashboard');
+                if(adminData.is_admin == true){
+                    res.redirect('/admin/dashboard');
                 } else{
-                    res.redirect('pages/login');
+                    res.redirect('admin/pages/login');
                 }
             } else {
-                res.render('/pages/login', {message:"Email or Password is incorrect!"});
+                // res.render('admin/pages/login', {message:"Email or Password is incorrect!"});
+                console.log("Sai mat khau");
             }
         } else{
-            res.render('/pages/login', {message:"Email or Password is incorrect!"});
+            console.log("entry Check false");
+            res.render('admin/pages/login', {message:"Email or Password is incorrect!"});
+            console.log("Sai mat khau");
         }
     } catch (error) {
         console.log(error.message);
@@ -37,7 +42,7 @@ const verifyLogin = async(req, res)=>{
 
 const admin = async(req, res)=>{
     try{
-        res.render('/pages/dashboard');
+        res.render('admin/pages/dashboard');
     } catch(error){
         console.log(error.message);
     }

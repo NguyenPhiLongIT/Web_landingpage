@@ -23,7 +23,7 @@ router.post('/store', (req, res, next) => {
     postController.createPost(req, res, next);
 });
 
-router.get('/create_success', (req, res, next) => {
+router.get('/create-success', (req, res, next) => {
     res.render('user/pages/create_success');
 });
 

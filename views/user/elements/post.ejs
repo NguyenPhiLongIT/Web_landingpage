@@ -12,9 +12,7 @@
 		<h3 class="title"><%= post.title %></h3>
 		<span class="updated">Updated:&nbsp;<%= post.time_update %></span>
 		<div class="post-content">
-			<% content.forEach(element => { %>
-			<%- element %>
-			<% }) %>
+			<div id="post-content"></div>
 			<li class="line-top"></li>
 			<button id="facebook"><i class="fa-brands fa-facebook-f fa-lg"></i></button>
 			<button id="twitter"><i class="fa-brands fa-twitter fa-lg"></i></button>
@@ -63,3 +61,17 @@
 		</form>
 	</div>
 </div>
+<script src="/ckeditor.js"></script>
+<script>
+	ClassicEditor
+		.create(document.querySelector('#post-content'))
+		.then(editor => {
+			const toolbarElement = editor.ui.view.toolbar.element;
+			editor.setData('<%- post.content %>');
+			editor.enableReadOnlyMode("#post-content");
+			toolbarElement.style.display = 'none';
+		})
+		.catch(err => {
+			console.error(err.stack);
+		});
+</script>

@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const path = require('path');
 // const ejs = require('ejs');
 const mongoose = require('mongoose');
+const fileUpload = require('express-fileupload');
 
 const postController = require('./controller/post');
 
@@ -30,9 +31,11 @@ app.use(express.json());
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'ckeditor5', 'build')));
+app.use(fileUpload());
 
 // Setup router
 app.use('/', require('./routes/home'));
 app.use('/blog', require('./routes/blog'));
 app.use('/product', require('./routes/product'));
-// app.use('/admin', require('./routes/admin'));
+app.use('/admin', require('./routes/admin'));

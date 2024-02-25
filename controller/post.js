@@ -5,8 +5,9 @@ exports.getAllPosts = async (req, res, next) => {
         const posts = await postService.getAllPost();
         // res.setHeader('Content-Type', 'text/html');
         // res.send({ posts: posts, status: "success" })
-        res.render("user/pages/blog", { posts: posts })
-        // next();
+        // res.render("user/pages/blog", { posts: posts })
+        req.posts = posts;
+        next();
     } catch (err) {
         res.status(500).send({ error: err.message });
     }
@@ -16,7 +17,7 @@ exports.createPost = async (req, res, next) => {
     try {
         // console.log("🚀 ~ exports.createPost= ~ req.body:", req.body)
         const post = await postService.createPost(req.body);
-        res.redirect('/blog/create_success');
+        res.redirect('/admin/dashboard/create-success');
     } catch (err) {
         res.status(500).send({ error: err.message });
     }
