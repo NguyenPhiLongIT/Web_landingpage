@@ -66,13 +66,8 @@ var self = module.exports = {
                     }
                 }
             )
-            //create file error -> delete folder
-            if (createFile.status != 200) {
-                console.log('Error');
-                await self.deleteFolder(folderId);
-            }
-
             const fileId = createFile.data.id;
+            console.log("File uploaded: ", fileId);
 
             await self.setFilePublic(fileId);
 

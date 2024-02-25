@@ -7,17 +7,18 @@ const path = require('path');
 const upload = require('../models/upload');
 
 router.get('/', postController.getAllPosts, (req, res, next) => {
-    console.log('All Posts');
     res.render('pages/blog', { 'posts': req.posts });
 });
 
 router.get('/create', (req, res, next) => {
     console.log('Create');
     res.render('pages/create_post');
+    next();
 });
 
 router.post('/store', (req, res, next) => {
     console.log('Request Body:', req.body);
+    console.log('Request Body:', req.urlList);
     postController.createPost(req, res, next);
 });
 
@@ -25,7 +26,7 @@ router.get('/create_success', (req, res, next) => {
     res.render('pages/create_success');
 });
 
-router.post('/upload/image', async (req, res) => {
+router.post('/upload/image', async (req, res, next) => {
     const { files } = req;
 
     if (!files || Object.keys(files).length === 0) {
@@ -56,18 +57,15 @@ router.post('/upload/image', async (req, res) => {
         req.body.url = [];
     }
     url_list.push(url);
-    req.body.url = url_list;
-
+    req.body.urlList = url_list;
     res.json({ url: "/image/upload/" + fileName });
-
+    next();
 });
 
 
 router.get('/:slug', postController.getPostBySlug, postController.getAllPosts, (req, res, next) => {
-    console.log('Slug');
     const post = req.post;
     const posts = req.posts;
-    const content = postFormat.formatPostContent(post);
-    res.render('pages/post', { post, 'content': content, 'posts': posts });
+    res.render('pages/post', { post, 'posts': posts });
 });
 module.exports = router;

@@ -4,7 +4,7 @@ const postSchema = new Schema({
     "time_upload": { type: String },
     "time_update": { type: String },
     "title": { type: String },
-    "content": { type: Array },
+    "content": { type: String },
     "format": [
         {
             "open_tag": { type: String },

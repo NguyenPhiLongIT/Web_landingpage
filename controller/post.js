@@ -4,9 +4,6 @@ exports.getAllPosts = async (req, res, next) => {
     try {
         const posts = await postService.getAllPost();
         req.posts = posts;
-        // res.setHeader('Content-Type', 'text/html');
-        // res.send({ posts: posts, status: "success" })
-        // res.render("pages/blog", { posts: posts })
         next();
     } catch (err) {
         res.status(500).send({ error: err.message });
