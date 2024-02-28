@@ -48,8 +48,18 @@ const admin = async(req, res)=>{
     }
 }
 
+const logout = async(req, res) => {
+    try{
+        res.session.destroy();
+        res.redirect('admin/pages/login');
+    } catch(error){
+        console.log(error.message);
+    }
+}
+
 module.exports = {
     loadLogin,
     verifyLogin,
-    admin
+    admin,
+    logout
 }
