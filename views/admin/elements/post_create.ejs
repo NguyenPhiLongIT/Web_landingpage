@@ -17,7 +17,22 @@
 				// The URL that the images are uploaded to.
 				uploadUrl: '/admin/dashboard/upload/image',
 				fieldName: 'image'
-
+				
+			},
+			onChange: (event, editor) => {
+				const content = editor.getData();
+				
+				// Use a regex to find image URLs in the content
+				const regex = /<img.*?src=["'](.*?)["']/g;
+				let match;
+				pictureUrls = [];
+				
+				while ((match = regex.exec(content)) !== null) {
+					pictureUrls.push(match[1]);
+				}
+				
+				// Update the hidden input with the picture URLs
+				document.getElementById('pictureUrls').value = JSON.stringify(pictureUrls);
 			}
 		})
 		.then(editor => {
