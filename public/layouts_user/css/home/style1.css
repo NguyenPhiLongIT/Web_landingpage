@@ -34,3 +34,12 @@ body {
     text-align: left;
 }
 
+@media (min-width: 768px) {
+    .services item {}
+    
+    .col-md-12 {
+        margin-top: -70px;
+        flex: 0 0 auto;
+        width: 100%;
+    }
+}
