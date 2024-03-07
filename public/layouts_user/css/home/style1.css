@@ -1,45 +1,75 @@
 body {
     background-color: white;
     font-family: Arial, Helvetica, sans-serif;
-    height: 2000px;
-    /* max-width: 2000px;
-    min-width: 1200px; */
-}
-.carousel-item{
-    height: 950px;
-}
-.carousel-item img{
-    min-width: 1500px;
-}
-.nav-item .nav-link{
-    color: white;
-    margin-right: 20px;
-    text-transform: uppercase;
-    font-size: 15px;
-}
-.nav-item .nav-link:hover{
-    background-color: red;
-}
-.navbar-toggler{
-    background-color: white;
+    height: 5000px;
 }
 
 .container-fluid {
-    width: 65%;
-    margin-top: 60px;
-
+    width: 95%;
 }
+.nav-item .nav-link{
+    color: #062d64;
+}
+.nav-top .nav-item{
+    margin-right: 3rem;
+}
+.nav-bottom .nav-item .nav-link:hover{
+    border-bottom: 0.125rem solid #fbba00;
+}
+.navbar-brand{
+    margin-bottom: 1rem;
+}
+.carousel-item img{
+    min-width: 1000px;
+}
+
 .carousel-caption{
-    margin: 20% 50px;
+    margin-bottom: 7rem;
     text-align: left;
 }
+.carousel-caption h2{
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin-bottom: 6rem;
+}
+.carousel-caption span{
+    color: #fbba00;
+}
+.carousel-caption p{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
 
-@media (min-width: 768px) {
-    .services item {}
-    
-    .col-md-12 {
-        margin-top: -70px;
-        flex: 0 0 auto;
-        width: 100%;
-    }
+.container{
+    margin-left: 2rem;
+}
+
+.stories h3{
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #062d64;
+    margin-bottom: 1.2rem;
+}
+.stories .row{
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+.stories .nav{
+    font-weight: bold;
+    color:#a3a5a7;
+    font-size: 1.2rem;
+}
+.stories li{
+    margin-right: 1rem;
+}
+.stories h4{
+    font-weight: bold;
+    color: #062d64;
+    font-size: 1.3rem;
+}
+.stories button{
+    border-radius: 0%;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1.2rem;
 }
