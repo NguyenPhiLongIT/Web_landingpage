@@ -11,15 +11,14 @@
 		width: 49.5%;
 		overflow: hidden;
 		min-width: 450px;
-		height: 400px;
+		height: 450px;
 	}
 	
 	.layer {
 		position: absolute;
-		background-image: url('https://www.mvtec.com/fileadmin/_processed_/d/8/csm_business-executives-discussing-with-their-colleagues-on-whiteboa_5b6bee0c28.webp');
+		background-image: url('<%= teasers[0].image %>');
 		background-size: cover;
 		height: 100%;
-		position: absolute;
 		background-position: center;
 	}
 	
@@ -36,6 +35,14 @@
 	.dark_blue {
 		background-color: #062d64;
 	}
+	
+	.teaser-text {
+		opacity: 100%;
+	}
+	
+	a {
+		text-decoration: none;
+	}
 </style>
 
 <div class="container-fluid teaser w-100 ">
@@ -43,13 +50,26 @@
 		<div class="col teaser-content">
 			<a href="#">
 				<div class="layer w-100"></div>
-				<div class="box dark_blue w-50"></div>
+				<div class="box dark_blue w-50">
+					<div class="teaser-text box p-4 pt-5 pb-5 text-wrap text-white">
+						<div class="teaser-title  fs-2 mb-3"><%= teasers[0].title %></div>
+						<div class="teaser-description fs-5"><%= teasers[0].description %></div>
+						<div class="teaser-redict fs-5 mt-4"><%= teasers[0].redict_text %></div>
+					</div>
+				</div>
+				
 			</a>
 		</div>
 		<div class="col teaser-content">
 			<a href="#">
 				<div class="layer w-100"></div>
-				<div class="box dark_blue w-50"></div>
+				<div class="box dark_blue w-50">
+					<div class="teaser-text box p-4 pt-5 pb-5 text-wrap text-white">
+						<div class="teaser-title fs-3 mb-3"><%= teasers[1].title %></div>
+						<div class="teaser-description fs-5"><%= teasers[1].description %></div>
+						<div class="teaser-redict fs-5 mt-4"><%= teasers[1].redict_text %></div>
+					</div>
+				</div>
 			</a>
 		</div>
 	</div>
