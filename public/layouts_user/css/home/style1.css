@@ -4,9 +4,9 @@ body {
 }
 
 .container-fluid {
-    width: 95%;
+    width: 85%;
 }
-.nav-item .nav-link{
+.header .nav-item .nav-link{
     color: #062d64;
 }
 .nav-top .nav-item{
@@ -18,29 +18,29 @@ body {
 .navbar-brand{
     margin-bottom: 1rem;
 }
-.carousel-item img{
+.slider .carousel-item img{
     min-width: 1000px;
 }
 
-.carousel-caption{
+.slider .carousel-caption{
     margin-bottom: 7rem;
     text-align: left;
 }
-.carousel-caption h2{
+.slider .carousel-caption h2{
     font-size: 2.2rem;
     font-weight: bold;
     margin-bottom: 6rem;
 }
-.carousel-caption span{
+.slider .carousel-caption span{
     color: #fbba00;
 }
-.carousel-caption p{
+.slider .carousel-caption p{
     font-size: 1.5rem;
     font-weight: bold;
 }
 
 .container{
-    margin-left: 2rem;
+    margin-left: 2rem; 
 }
 
 .stories h3{
@@ -66,9 +66,118 @@ body {
     color: #062d64;
     font-size: 1.3rem;
 }
-.stories button{
-    border-radius: 0%;
+
+
+.job-offer {
+    margin-top: 8rem;
+}
+.job-offer img{
+    min-width: 1000px;
+}
+.job-offer .carousel-caption{
+    margin-bottom: 5rem;
+    text-align: left;
+}
+.job-offer span{
+    color: #fbba00;
+    font-weight: bold;
+}
+.job-offer h2{
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+.news-events{
+    margin-top: 4rem;
+}
+.card{
+    border: none;
+}
+.news-events h3{
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #062d64;
+    margin-bottom: 1.2rem;
+}
+.news-events .col-events .card{
+    margin-bottom: 1.2rem;
+}
+.news-events h5{
+    color: #062d64;
+    font-weight: bold;
+}
+.news-events .time{
+    color: black;
+}
+.news-events span{
+    color: #a3a5a7;
+}
+
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+
+.footer{
+    margin-top: 5rem;
+}
+.top-footer{
+    position: relative;
+    min-height: 22rem;
+}
+.top-footer .layer{
+    position: absolute;
+    background-image: url('https://www.mvtec.com/typo3conf/ext/mvtec/Resources/Public/Images/Assets/footerBg.png');
+    background-size: cover;
+    height: 100%;
+    background-position: center;
+    z-index: 1;
+}
+.top-footer .color-bg{
+    background-color:#062d64;
+    z-index: 2;
+    opacity: 0.5;
+    position: absolute;
+    height: 100%;
+}
+.top-footer .nav-link{
+    color: white;
+    text-transform: uppercase;
+}
+
+.top-footer .navbar-nav {
+    width: 100%;
+    margin-top: 3rem;
+    z-index: 3;
+}
+.top-footer ul {
+    width: 20%; 
+}
+.top-footer a{
+    display: inline;
+}
+
+@media (max-width: 1200px) {
+    .top-footer{
+        display: none;
+    }
+}
+
+.sub-footer{
+    margin-top: 1rem;
+}
+.sub-footer ul{
+    display: flex;
+}
+.sub-footer a, .sub-footer p{
+    color: rgba(6, 45, 100, .5);
     font-weight: bold;
     text-transform: uppercase;
-    font-size: 1.2rem;
+    font-size: 0.7rem;
+}
+.social-media{
+    margin-top: -2rem;
 }

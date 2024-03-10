@@ -17,28 +17,7 @@ router.get("/", (req, res) => {
             redict_text: 'Watch now',
         }
     ]
-
-    const products = [
-        {
-            logo: 'https://www.mvtec.com/fileadmin/Redaktion/05_mvtec_logos/halcon-mvtec-slogan-logo-white.png',
-            version: 'HALCON 23.11 available now',
-            description: 'The comprehensive standard software for machine vision with an integrated development environment (HDevelop) that is used worldwide.',
-            redict_text: 'Learn more',
-        },
-        {
-            logo: 'https://www.mvtec.com/fileadmin/Redaktion/05_mvtec_logos/merlic-mvtec-slogan-logo-white.png',
-            version: '',
-            description: 'The comprehensive standard software for machine vision with an integrated development environment (HDevelop) that is used worldwide.',
-            redict_text: 'Discover more',
-        },
-        {
-            logo: 'https://www.mvtec.com/fileadmin/Redaktion/05_mvtec_logos/deep-learning-tool-logo-slogan-white.png',
-            version: '',
-            description: 'The comprehensive standard software for machine vision with an integrated development environment (HDevelop) that is used worldwide.',
-            redict_text: 'Try now',
-        },
-    ]
-    res.render('home/pages/home', { title: 'Home', teasers: teasers, products: products });
+    res.render('home/pages/home', { title: 'Home', teasers: teasers });
 });
 
 module.exports = router;
