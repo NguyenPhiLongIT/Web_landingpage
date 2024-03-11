@@ -40,6 +40,11 @@
 		opacity: 100%;
 	}
 	
+	.teaser-redict {
+		position: relative;
+		display: inline-block;
+	}
+	
 	a {
 		text-decoration: none;
 	}
@@ -69,7 +74,7 @@
 					<div class="teaser-text box p-4 pt-5 pb-5 text-wrap text-white">
 						<div class="teaser-title  fs-2 mb-3"><%= teasers[0].title %></div>
 						<div class="teaser-description fs-5"><%= teasers[0].description %></div>
-						<div class="teaser-redict fs-5 mt-4"><%= teasers[0].redict_text %></div>
+						<div class="teaser-redict fs-5 mt-4"><%= teasers[0].redict_text %><%- include('link_animation.ejs') %></div>
 					</div>
 				</div>
 				
@@ -82,7 +87,7 @@
 					<div class="teaser-text box p-4 pt-5 pb-5 text-wrap text-white">
 						<div class="teaser-title fs-3 mb-3"><%= teasers[1].title %></div>
 						<div class="teaser-description fs-5"><%= teasers[1].description %></div>
-						<div class="teaser-redict fs-5 mt-4"><%= teasers[1].redict_text %></div>
+						<div class="teaser-redict fs-5 mt-4"><%= teasers[1].redict_text %><%- include('link_animation.ejs') %></div>
 					</div>
 				</div>
 			</a>

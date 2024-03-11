@@ -55,7 +55,7 @@
 	
 	.products-teaser {
 		height: 360px;
-		max-width: 350px;
+		max-width: 380px;
 		padding: 0;
 	}
 	
@@ -116,16 +116,6 @@
 		display: none;
 	}
 	
-	@media (min-width: 1560px) {
-		.product-redict {
-			display: block;
-			position: absolute;
-			left: 10%;
-			font-size: 1.25rem;
-			top: 100%;
-		}
-	}
-	
 	@media (min-width: 1200px) {
 		.products-list {
 			gap: 2%;
@@ -137,7 +127,11 @@
 		
 		.products-teaser-top {
 			width: 48%;
-			max-width: 690px;
+			max-width: 760px;
+		}
+		
+		.product-version {
+			width: 115%;
 		}
 		
 		.products-teaser-top-img {
@@ -149,6 +143,20 @@
 		.products-teaser-top-img img {
 			height: 375px;
 			width: 100%;
+		}
+	}
+	
+	@media (min-width: 1560px) {
+		.product-redict {
+			display: block;
+			position: absolute;
+			left: 10%;
+			font-size: 1.25rem;
+			top: 100%;
+		}
+		
+		.product-version {
+			width: 110%;
 		}
 	}
 	
@@ -211,7 +219,7 @@
 	</div>
 	
 	<div class="products-list row g-0 row-cols-sm-1 row-cols-md-2 row-cols-lg-3">
-		<div class="products-teaser products-teaser-top bg-orange col-sm-1 col-md-1 col-lg-2 ">
+		<a href="#" class="products-teaser products-teaser-top bg-orange col-sm-1 col-md-1 col-lg-2 ">
 			<div class="products-teaser-wrap row">
 				<div class="products-teaser-top-img col z-2">
 					<img src="https://www.mvtec.com/fileadmin/Redaktion/07_software_boxes/softwarebox_halcon_progress_runner.png" width="407" height="543" alt="">
@@ -220,43 +228,44 @@
 					<div class="product-logo">
 						<img src="<%= products[0].logo %>" alt="">
 					</div>
-					<div class="product-version">
+					<div class="product-version text-orange fs-5">
 						<p><%= products[0].version %></p>
 					</div>
-					<div class="product-description">
+					<div class="product-description fs-6 fw-bold">
 						<p><%= products[0].description %></p>
 					</div>
 					<div class="product-redict text-orange">
-						<p><%= products[0].redict_text %></p>
+						<!-- &lt; => '<', &gt; => '>' -->
+						<p><%= products[0].redict_text %> <%- include('link_animation.ejs') %></p>
 					</div>
 				</div>
 			</div>
-		</div>
-		<div class="products-teaser bg-bluesky col-sm-1 col-md-1 ">
+		</a>
+		<a href="#" class="products-teaser bg-bluesky col-sm-1 col-md-1 ">
 			<div class="teaser-info col">
 				<div class="product-logo">
 					<img src="<%= products[1].logo %>" alt="">
 				</div>
-				<div class="product-description">
+				<div class="product-description fs-6 fw-bold">
 					<p><%= products[1].description %></p>
 				</div>
 				<div class="product-redict text-bluesky">
-					<p><%= products[1].redict_text %></p>
+					<p><%= products[1].redict_text %> <%- include('link_animation.ejs') %></p>
 				</div>
 			</div>
-		</div>
-		<div class="products-teaser bg-darkgreen col-sm-1 col-md-1 ">
+		</a>
+		<a href="#" class="products-teaser bg-darkgreen col-sm-1 col-md-1 ">
 			<div class="teaser-info col">
 				<div class="product-logo">
 					<img src="<%= products[2].logo %>" alt="">
 				</div>
-				<div class="product-description">
+				<div class="product-description fs-6 fw-bold">
 					<p><%= products[2].description %></p>
 				</div>
 				<div class="product-redict text-darkgreen">
-					<p><%= products[2].redict_text %></p>
+					<p><%= products[2].redict_text %> <%- include('link_animation.ejs') %></p>
 				</div>
 			</div>
-		</div>
+		</a>
 	</div>
 </div>
