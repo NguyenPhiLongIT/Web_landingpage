@@ -210,6 +210,9 @@ ul{
 .sub-footer ul{
     display: flex;
 }
+.sub-footer li{
+    margin-right: 1.5rem;
+}
 .sub-footer a, .sub-footer p{
     color: rgba(6, 45, 100, .5);
     font-weight: bold;
@@ -218,4 +221,27 @@ ul{
 }
 .social-media{
     margin-top: -2rem;
+}
+@media (max-width: 1100px) {
+    .social-media{
+        display: contents;
+    }
+}
+@media (max-width: 660px) {
+    .sub-footer ul{
+        display: grid;
+    }
+    .social-media{
+        display: grid;
+        
+    }
+}
+
+.btn-scroll{
+    position: fixed;
+    right: 65px;
+    bottom: 90px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
 }
