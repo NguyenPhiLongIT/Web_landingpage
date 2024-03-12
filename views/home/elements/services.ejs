@@ -13,7 +13,6 @@
 	
 	.services {
 		position: relative;
-		height: 632px;
 	}
 	
 	.services-1stbg {
@@ -54,9 +53,6 @@
 	
 	.services-wrap {
 		position: absolute;
-		padding-top: 90px;
-		top: 0;
-		right: 0;
 	}
 	
 	.services-buttons {
@@ -69,6 +65,8 @@
 	
 	.services-button {
 		width: 20%;
+		min-width: 200px;
+		margin: auto;
 	}
 	
 	.services-button:hover>a .services-picture img {
@@ -93,6 +91,20 @@
 	.services a {
 		color: white;
 	}
+	
+	@media (min-width: 1200px) {
+		.services-wrap {
+			padding-top: 90px;
+			top: 0;
+			right: 0;
+		}
+	}
+	
+	@media (max-width: 1200px) {
+		.services-content-text {
+			width: 100%;
+		}
+	}
 </style>
 
 <div class="container-fluid services-1stbg services w-100 z-0">
@@ -109,7 +121,7 @@
 				<p>Learn more <%- include('link_animation.ejs') %></p>
 			</a>
 		</div>
-		<div class="services-buttons w-100 row row-cols-5 fw-bold fs-5">
+		<div class="services-buttons w-100 row row-cols-5 row-cols-md-2 row-cols-sm-1 fw-bold fs-5">
 			<div class="services-button col">
 				<a href="#">
 					<div class="services-picture">
