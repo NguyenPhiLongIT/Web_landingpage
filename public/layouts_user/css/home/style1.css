@@ -6,18 +6,24 @@ body {
 .container-fluid {
     width: 85%;
 }
-.header .nav-item .nav-link{
+.nav-top, .nav-bottom{
+    margin-top: -2rem;
+}
+.header .nav-item .nav-link, .nav-bottom .dropdown-item{
     color: #062d64;
 }
 .nav-top .nav-item{
     margin-right: 3rem;
 }
-.nav-bottom .nav-item .nav-link:hover{
+.nav-bottom .nav-item .nav-link:hover {
     border-bottom: 0.125rem solid #fbba00;
 }
-.navbar-brand{
-    margin-bottom: 1rem;
+
+.nav-bottom .dropdown:hover .dropdown-menu-level1{
+    display:block;
+    top: 6.5rem; left: 0;
 }
+
 .slider .carousel-item img{
     min-width: 1000px;
 }
@@ -39,9 +45,10 @@ body {
     font-weight: bold;
 }
 
-.container{
-    margin-left: 2rem; 
-}
+/* .slider a:hover{
+    transform: scale(1.2);
+	transition: all .5s;
+} */
 
 .stories h3{
     font-size: 1.8rem;
@@ -66,25 +73,50 @@ body {
     color: #062d64;
     font-size: 1.3rem;
 }
-
+.frame-text{
+    position: relative;
+}
+.frame-text p{
+    display: inline;
+}
+.frame-text span{
+    position: absolute;
+}
 
 .job-offer {
+    position: relative;
     margin-top: 8rem;
 }
-.job-offer img{
-    min-width: 1000px;
+.job-offer-bg{
+    position: absolute;
+    background-image: url('https://www.mvtec.com/fileadmin/_processed_/c/c/csm_drew-beamer-9uX5cX1l3bw-unsplash_4a143bcf20.webp');
+    background-size: cover;
+    height: 100%;
+    background-position: center;
+    z-index: 1;
 }
-.job-offer .carousel-caption{
-    margin-bottom: 5rem;
-    text-align: left;
+.job-offer-color-bg{
+    position: absolute;
+    background-color:#062d64;
+    opacity: 0.8;
+    height: 100%;
+    z-index: 2;
 }
-.job-offer span{
-    color: #fbba00;
-    font-weight: bold;
+.job-offer-content{
+    display: flex;
 }
-.job-offer h2{
-    font-weight: bold;
-    margin-bottom: 2rem;
+.job-offer-img{
+    position: relative;
+    z-index: 3;
+}
+.job-offer-text{
+    z-index: 3;
+    margin: 2rem 2rem;
+}
+@media (max-width: 800px) {
+    .job-offer-img{
+        display: none;
+    }
 }
 
 .news-events{
@@ -109,14 +141,20 @@ body {
 .news-events .time{
     color: black;
 }
-.news-events span{
+.news-events .card span{
     color: #a3a5a7;
+}
+
+@media (max-width: 767px) {
+    .col-events{
+        margin-top: 3rem;
+    }
 }
 
 ul{
     list-style: none;
 }
-a{
+.footer a{
     text-decoration: none;
     color: white;
 }
@@ -128,7 +166,7 @@ a{
     position: relative;
     min-height: 22rem;
 }
-.top-footer .layer{
+.footer-bg{
     position: absolute;
     background-image: url('https://www.mvtec.com/typo3conf/ext/mvtec/Resources/Public/Images/Assets/footerBg.png');
     background-size: cover;
@@ -136,7 +174,7 @@ a{
     background-position: center;
     z-index: 1;
 }
-.top-footer .color-bg{
+.footer-color-bg{
     background-color:#062d64;
     z-index: 2;
     opacity: 0.5;
