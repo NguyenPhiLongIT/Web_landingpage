@@ -11,6 +11,8 @@ const postController = require("./controller/post");
 
 const app = express();
 const port = 3000;
+const http = require('http');
+const server = http.createServer(app);
 
 mongoose
 	.connect(
