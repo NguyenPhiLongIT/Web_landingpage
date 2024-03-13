@@ -1,8 +1,8 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const path = require("path");
-const partials = require("express-partials");
-const cookieParser = require("cookie-parser");
+// const partials = require("express-partials");
+// const cookieParser = require("cookie-parser");
 // const ejs = require('ejs');
 const mongoose = require("mongoose");
 const fileUpload = require("express-fileupload");
@@ -35,9 +35,9 @@ console.log(
 	path.join(__dirname, "views")
 );
 app.set("view engine", "ejs");
-app.use(partials());
+// app.use(partials());
 app.use(express.json());
-app.use(cookieParser());
+// app.use(cookieParser());
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
