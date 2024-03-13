@@ -233,7 +233,19 @@ ul{
     }
     .social-media{
         display: grid;
-        
+    }
+}
+@media (max-width: 465px){
+    .sub-footer ul{
+        position: absolute;
+        display: grid;
+        align-content: center;
+        margin: 2rem auto;
+        justify-content: end;
+    }
+    .social-media{
+        margin: -2rem auto;
+        display: block;
     }
 }
 
