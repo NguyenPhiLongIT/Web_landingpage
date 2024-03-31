@@ -4,12 +4,11 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "install": "npm install express ejs body-parser mongoose mongodb nodemon body-parser bcrypt sass",
+    "install": "npm install express ejs body-parser mongoose mongodb nodemon body-parser bcrypt sass && npm run build_ckeditor && npm run build_scss",
     "build_ckeditor": "cd ckeditor5 && npm install && npm run build",
-    "build_scss": "sass scss public/css",
-    "build": "npm i && npm run build_ckeditor && npm run build_scss",
+    "build_scss": "sass scss:public/css",
     "scss": "sass --watch scss:public/css",
-    "test": "nodemon --config nodemon.json --inspect app.js",
+    "test": "concurrently \"npm run scss\" \"nodemon app.js\" ",
     "start": "node app.js"
   },
   "keywords": [],
@@ -46,9 +45,11 @@
     "mongoose": "^8.2.4",
     "multer": "^1.4.5-lts.1",
     "nodemon": "^3.1.0",
-    "request-promise": "^4.2.6"
+    "request-promise": "^4.2.6",
+    "sass": "^1.72.0"
   },
   "devDependencies": {
+    "concurrently": "^8.2.2",
     "wordpress": "^1.4.2"
   }
 }
