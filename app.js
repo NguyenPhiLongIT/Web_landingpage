@@ -50,6 +50,6 @@ app.use(fileUpload());
 // Setup router
 app.use('/', require('./routes/home'));
 app.use("/blog", require("./routes/blog"));
-// app.use("/product", require("./routes/product"));
+app.use("/product", require("./routes/product"));
 app.use("/admin", require("./routes/admin"));
 app.use("/talk", require("./middleware/talk"));

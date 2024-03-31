@@ -7,7 +7,7 @@ body {
     width: 85%;
 }
 .nav-top, .nav-bottom{
-    margin-top: -2rem;
+    /* margin-top: -2rem; */
 }
 .header .nav-item .nav-link, .nav-bottom .dropdown-item{
     color: #062d64;
