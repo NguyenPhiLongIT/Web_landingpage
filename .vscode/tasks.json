@@ -1,0 +1,13 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "build_scss",
+			"group": "build",
+			"problemMatcher": [],
+			"label": "build_scss",
+			"detail": "sass scss public/css"
+		}
+	]
+}
