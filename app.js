@@ -14,6 +14,7 @@ const port = 3000;
 const http = require('http');
 const server = http.createServer(app);
 
+
 mongoose
 	.connect(
 		"mongodb+srv://nguyenphilongit123:Long10092003@cluster0.pbxpwii.mongodb.net/blog"
@@ -36,6 +37,7 @@ console.log(
 );
 app.set("view engine", "ejs");
 // app.use(partials());
+
 app.use(express.json());
 // app.use(cookieParser());
 

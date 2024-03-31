@@ -50,7 +50,7 @@ var self = module.exports = {
             console.log(error);
         }
     },
-    uploadFile: async (folderName, fileDir, fileName, fileType) => {
+    uploadFile: async (fileDir, fileName, fileType) => {
         try {
             const createFile = await drive.files.create(
                 {
