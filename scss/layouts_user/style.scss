@@ -1,0 +1,6 @@
+@use "blog";
+@use "home";
+@use "navbarfooter";
+@use "product";
+@forward "reset";
+@import "../../node_modules/bootstrap/scss/bootstrap";
