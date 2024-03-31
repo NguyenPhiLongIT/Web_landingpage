@@ -7,10 +7,10 @@
     "install": "npm install express ejs body-parser mongoose mongodb nodemon body-parser bcrypt sass",
     "build_ckeditor": "cd ckeditor5 && npm install && npm run build",
     "build_scss": "sass scss public/css",
-    "scss": "sass --watch scss:public/css",
     "build": "npm i && npm run build_ckeditor && npm run build_scss",
-    "start": "nodemon --config nodemon.json --inspect app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "scss": "sass --watch scss:public/css",
+    "test": "nodemon --config nodemon.json --inspect app.js",
+    "start": "node app.js"
   },
   "keywords": [],
   "author": "",
