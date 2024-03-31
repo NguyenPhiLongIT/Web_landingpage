@@ -6,18 +6,13 @@
             <div class="card mb-3">
                 <div class="row g-0">
                     <div class="col-md-4">
-                        <img src="https://media.licdn.com/dms/image/D4E22AQFjoXrDPse3ZA/feedshare-shrink_800/0/1690375831180?e=2147483647&v=beta&t=rr0RXjpQYbQcAw0YN41ubiVUTGoemSS7VkXHhS5I2Z4"
-                            class="img-fluid rounded-start" alt="...">
+                        <img src="<%= news[0].image %>" class="img-fluid rounded-start" alt="...">
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
-                            <h5 class="time ">February 2, 2024 <span> &#124; HALCON, Certified Integration
-                                    Partner</span></h5>
-                            <h5 class="card-title">MVTec welcomes Vision On Line as a new partner</h5>
-                            <p class="card-text">MVTec is pleased to collaborate with Vision On Line, a company
-                                specializing in automation solutions based on image processing. Together, they
-                                optimize production processes using advanced machine vision, robotics, and
-                                automation technologies.</p>
+                            <h5 class="time "><%= news[0].time %> <span> &#124;<%= news[0].tag %> </span></h5>
+                            <h5 class="card-title"><%= news[0].title %></h5>
+                            <p class="card-text"><%= news[0].description %></p>
                         </div>
                     </div>
                 </div>
@@ -25,18 +20,13 @@
             <div class="card mb-3">
                 <div class="row g-0">
                     <div class="col-md-4">
-                        <img src="https://media.licdn.com/dms/image/D4E22AQFjoXrDPse3ZA/feedshare-shrink_800/0/1690375831180?e=2147483647&v=beta&t=rr0RXjpQYbQcAw0YN41ubiVUTGoemSS7VkXHhS5I2Z4"
-                            class="img-fluid rounded-start" alt="...">
+                        <img src="<%= news[1].image %>" class="img-fluid rounded-start" alt="...">
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
-                            <h5 class="time ">February 2, 2024 <span> &#124; HALCON, Certified Integration
-                                    Partner</span></h5>
-                            <h5 class="card-title">MVTec welcomes Vision On Line as a new partner</h5>
-                            <p class="card-text">MVTec is pleased to collaborate with Vision On Line, a company
-                                specializing in automation solutions based on image processing. Together, they
-                                optimize production processes using advanced machine vision, robotics, and
-                                automation technologies.</p>
+                            <h5 class="time "><%= news[1].time %> <span> &#124;<%= news[1].tag %> </span></h5>
+                            <h5 class="card-title"><%= news[1].title %></h5>
+                            <p class="card-text"><%= news[1].description %></p>
                         </div>
                     </div>
                 </div>
@@ -44,18 +34,13 @@
             <div class="card mb-3">
                 <div class="row g-0">
                     <div class="col-md-4">
-                        <img src="https://media.licdn.com/dms/image/D4E22AQFjoXrDPse3ZA/feedshare-shrink_800/0/1690375831180?e=2147483647&v=beta&t=rr0RXjpQYbQcAw0YN41ubiVUTGoemSS7VkXHhS5I2Z4"
-                            class="img-fluid rounded-start" alt="...">
+                        <img src="<%= news[2].image %>" class="img-fluid rounded-start" alt="...">
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
-                            <h5 class="time ">February 2, 2024 <span> &#124; HALCON, Certified Integration
-                                    Partner</span></h5>
-                            <h5 class="card-title">MVTec welcomes Vision On Line as a new partner</h5>
-                            <p class="card-text">MVTec is pleased to collaborate with Vision On Line, a company
-                                specializing in automation solutions based on image processing. Together, they
-                                optimize production processes using advanced machine vision, robotics, and
-                                automation technologies.</p>
+                            <h5 class="time "><%= news[2].time %> <span> &#124;<%= news[2].tag %> </span></h5>
+                            <h5 class="card-title"><%= news[2].title %></h5>
+                            <p class="card-text"><%= news[2].description %></p>
                         </div>
                     </div>
                 </div>
@@ -72,42 +57,38 @@
             <p class="fw-bold">Get all details about events, webinar and trade fair.</p>
             <div class="card">
                 <div class="card-body">
-                    <h5 class="time">March 20, 2024 <span>| MERLIC, Webinar</span></h5>
-                    <h5 class="card-title">MERLIC 5.5 Webinar - learn all about new features</h5>
+                    <h5 class="time"><%= events[0].time %> <span>| <%= events[0].tag %></span></h5>
+                    <h5 class="card-title"><%= events[0].title %></h5>
                     <p class="card-text"
-                        style="white-space: nowrap;overflow: hidden !important;text-overflow: ellipsis;">Learn how
-                        to use the new features of the easy-to-use software MERLIC with hands-on technical
-                        demonstrations. Join the webinar on the release day of MERLIC 5.5!</p>
+                        style="white-space: nowrap;overflow: hidden !important;text-overflow: ellipsis;">
+                        <%= events[0].description %></p>
                 </div>
             </div>
             <div class="card">
                 <div class="card-body">
-                    <h5 class="time">March 20, 2024 <span>| MERLIC, Webinar</span></h5>
-                    <h5 class="card-title">MERLIC 5.5 Webinar - learn all about new features</h5>
+                    <h5 class="time"><%= events[1].time %> <span>| <%= events[1].tag %></span></h5>
+                    <h5 class="card-title"><%= events[1].title %></h5>
                     <p class="card-text"
-                        style="white-space: nowrap;overflow: hidden !important;text-overflow: ellipsis;">Learn how
-                        to use the new features of the easy-to-use software MERLIC with hands-on technical
-                        demonstrations. Join the webinar on the release day of MERLIC 5.5!</p>
+                        style="white-space: nowrap;overflow: hidden !important;text-overflow: ellipsis;">
+                        <%= events[1].description %></p>
                 </div>
             </div>
             <div class="card">
                 <div class="card-body">
-                    <h5 class="time">March 20, 2024 <span>| MERLIC, Webinar</span></h5>
-                    <h5 class="card-title">MERLIC 5.5 Webinar - learn all about new features</h5>
+                    <h5 class="time"><%= events[2].time %> <span>| <%= events[2].tag %></span></h5>
+                    <h5 class="card-title"><%= events[2].title %></h5>
                     <p class="card-text"
-                        style="white-space: nowrap;overflow: hidden !important;text-overflow: ellipsis;">Learn how
-                        to use the new features of the easy-to-use software MERLIC with hands-on technical
-                        demonstrations. Join the webinar on the release day of MERLIC 5.5!</p>
+                        style="white-space: nowrap;overflow: hidden !important;text-overflow: ellipsis;">
+                        <%= events[2].description %></p>
                 </div>
             </div>
             <div class="card">
                 <div class="card-body">
-                    <h5 class="time">March 20, 2024 <span>| MERLIC, Webinar</span></h5>
-                    <h5 class="card-title">MERLIC 5.5 Webinar - learn all about new features</h5>
+                    <h5 class="time"><%= events[3].time %> <span>| <%= events[3].tag %></span></h5>
+                    <h5 class="card-title"><%= events[3].title %></h5>
                     <p class="card-text"
-                        style="white-space: nowrap;overflow: hidden !important;text-overflow: ellipsis;">Learn how
-                        to use the new features of the easy-to-use software MERLIC with hands-on technical
-                        demonstrations. Join the webinar on the release day of MERLIC 5.5!</p>
+                        style="white-space: nowrap;overflow: hidden !important;text-overflow: ellipsis;">
+                        <%= events[3].description %></p>
                 </div>
             </div>
 

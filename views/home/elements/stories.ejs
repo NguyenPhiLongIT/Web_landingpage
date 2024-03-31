@@ -9,22 +9,18 @@
         <div class="col-md-4 col-sm-12 col-lg-4">
             <a class="story" href="#">
                 <div class="card">
-                    <img src="https://www.mvtec.com/fileadmin/_processed_/6/1/csm_2023.11.09_success_story_mvtec_inndeo_1_adcb6aef14.webp"
-                        class="card-img-top" alt="...">
+                    <img src="<%= stories[0].image %>" class="card-img-top" alt="...">
                     <div class="card-body">
                         <ul class="nav">
-                            <li>Food & Beverages</li>
-                            <li>Deep Learning</li>
-                            <li>OCR OCV</li>
+                            <% for( let index = 0; index < stories[0].tag.length; index++ ) { %>
+                                <li><%= stories[0].tag[index] %></li>
+                            <% } %>
                         </ul>
-                        <h4>Machine vision and deep learning detect defects in the food industry</h4>
+                        <h4><%= stories[0].title %></h4>
                         <div>
                             <p class="card-text"
                                 style="white-space: nowrap;overflow: hidden !important;text-overflow: ellipsis;">
-                                Automation specialist INNDEO has developed a sophisticated automation solution for
-                                quality control in the packaging industry. Thanks to machine vision and deep
-                                learning technologies, high speeds and defect detection rates are no longer a
-                                problem.</p>
+                                <%= stories[0].description %>    </p>
                         </div>
                     </div>
                 </div>
@@ -33,22 +29,18 @@
         <div class="col-md-4 col-sm-12 col-lg-4">
             <a class="story" href="#">
                 <div class="card">
-                    <img src="https://www.mvtec.com/fileadmin/_processed_/6/1/csm_2023.11.09_success_story_mvtec_inndeo_1_adcb6aef14.webp"
-                        class="card-img-top" alt="...">
+                    <img src="<%= stories[1].image %>" class="card-img-top" alt="...">
                     <div class="card-body">
                         <ul class="nav">
-                            <li>Food & Beverages</li>
-                            <li>Deep Learning</li>
-                            <li>OCR OCV</li>
+                            <% for( let index = 0; index < stories[1].tag.length; index++ ) { %>
+                                <li><%= stories[1].tag[index] %></li>
+                            <% } %>
                         </ul>
-                        <h4>Machine vision and deep learning detect defects in the food industry</h4>
+                        <h4><%= stories[1].title %></h4>
                         <div>
                             <p class="card-text"
                                 style="white-space: nowrap;overflow: hidden !important;text-overflow: ellipsis;">
-                                Automation specialist INNDEO has developed a sophisticated automation solution for
-                                quality control in the packaging industry. Thanks to machine vision and deep
-                                learning technologies, high speeds and defect detection rates are no longer a
-                                problem.</p>
+                                <%= stories[1].description %>    </p>
                         </div>
                     </div>
                 </div>
@@ -57,22 +49,18 @@
         <div class="col-md-4 col-sm-12 col-lg-4">
             <a class="story" href="#">
                 <div class="card">
-                    <img src="https://www.mvtec.com/fileadmin/_processed_/6/1/csm_2023.11.09_success_story_mvtec_inndeo_1_adcb6aef14.webp"
-                        class="card-img-top" alt="...">
+                    <img src="<%= stories[2].image %>" class="card-img-top" alt="...">
                     <div class="card-body">
                         <ul class="nav">
-                            <li>Food & Beverages</li>
-                            <li>Deep Learning</li>
-                            <li>OCR OCV</li>
+                            <% for( let index = 0; index < stories[2].tag.length; index++ ) { %>
+                                <li><%= stories[2].tag[index] %></li>
+                            <% } %>
                         </ul>
-                        <h4>Machine vision and deep learning detect defects in the food industry</h4>
+                        <h4><%= stories[2].title %></h4>
                         <div>
                             <p class="card-text"
                                 style="white-space: nowrap;overflow: hidden !important;text-overflow: ellipsis;">
-                                Automation specialist INNDEO has developed a sophisticated automation solution for
-                                quality control in the packaging industry. Thanks to machine vision and deep
-                                learning technologies, high speeds and defect detection rates are no longer a
-                                problem.</p>
+                                <%= stories[2].description %>    </p>
                         </div>
                     </div>
                 </div>
